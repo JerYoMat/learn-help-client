@@ -4,7 +4,9 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducer';
 import App from './App';
-
+import CssBaseline from '@material-ui/core/CssBaseline';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import theme from './styles/theme';
 
 const store = createStore(
   reducer,
@@ -13,8 +15,11 @@ const store = createStore(
 );
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <MuiThemeProvider theme={theme}>
+    <CssBaseline />
+    <Provider store={store}>
+      <App/>
+    </Provider>
+  </MuiThemeProvider>,
   document.querySelector('#root')
 );
