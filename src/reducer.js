@@ -5,7 +5,7 @@ const initialState = {
   helpers: {}
 };
 
-const reducer = product((draft, action) => {
+const reducer = produce((draft, action) => {
   switch(action.type) {
     default:
       return;
